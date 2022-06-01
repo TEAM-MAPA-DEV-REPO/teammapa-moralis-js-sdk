@@ -26,8 +26,10 @@ import { mockGetTokenMetadataBySymbol } from './evmApi/getTokenMetadataBySymbol'
 import { mockGetTokenIdOwners } from './evmApi/getTokenIdOwners';
 import { mockGetNFTOwners } from './evmApi/getNFTOwners';
 import { mockGetTransaction } from './evmApi/getTransaction';
+import { mockSyncNFTContract } from './evmApi/syncNFTContract';
 
 const handlers = [
+  mockSyncNFTContract,
   mockResolveDomain,
   mockResolveAddress,
   mockGetNativeBalance,
