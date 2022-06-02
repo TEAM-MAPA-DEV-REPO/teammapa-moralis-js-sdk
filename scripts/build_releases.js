@@ -37,7 +37,8 @@ const execCommand = function (cmd) {
 (async function () {
   console.log(`Calculating next semantic version`);
 
-  const nextVersion = await getNextReleaseVersion();
+  // const nextVersion = await getNextReleaseVersion();
+  const nextVersion = '1.8.0';
 
   console.log(`Building JavaScript SDK v${nextVersion}...\n`);
 

@@ -19,7 +19,7 @@ export const WalletConnectEvent = Object.freeze({
 class WalletConnectWeb3Connector extends AbstractWeb3Connector {
   type = 'WalletConnect';
 
-  async activate({ chainId: providedChainId, mobileLinks, newSession } = {}) {
+  async activate({ chainId: providedChainId, mobileLinks, newSession, speedyNodeApiKey } = {}) {
     // Log out of any previous sessions
     if (newSession) {
       this.cleanup();
@@ -28,7 +28,7 @@ class WalletConnectWeb3Connector extends AbstractWeb3Connector {
     if (!this.provider) {
       let WalletConnectProvider;
       const config = {
-        rpc: getMoralisRpcs('WalletConnect'),
+        rpc: speedyNodeApiKey ? getMoralisRpcs(speedyNodeApiKey) : getMoralisRpcs('WalletConnect'),
         chainId: providedChainId,
         qrcodeModalOptions: {
           mobileLinks,
