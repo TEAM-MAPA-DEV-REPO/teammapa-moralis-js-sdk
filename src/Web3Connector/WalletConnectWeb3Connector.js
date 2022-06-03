@@ -27,6 +27,13 @@ class WalletConnectWeb3Connector extends AbstractWeb3Connector {
 
     if (!this.provider) {
       let WalletConnectProvider;
+      console.log(
+        '팀마파 WalletConnect...',
+        speedyNodeApiKey,
+        providedChainId,
+        mobileLinks,
+        newSession
+      );
       const config = {
         rpc: speedyNodeApiKey ? getMoralisRpcs(speedyNodeApiKey) : getMoralisRpcs('WalletConnect'),
         chainId: providedChainId,
